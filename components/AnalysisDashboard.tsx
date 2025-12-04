@@ -104,18 +104,34 @@ const AnalysisDashboard: React.FC<AnalysisDashboardProps> = ({ analysis }) => {
           </ul>
         </div>
 
-        {/* Actionable Tips */}
-        <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl shadow-md border border-orange-100">
-          <h3 className="text-xl font-bold text-orange-800 mb-4 flex items-center gap-2">
-            <AlertCircle className="text-orange-500" /> Tips del Maestro
-          </h3>
-          <div className="space-y-4">
-             {analysis.feedback.tips.map((tip, idx) => (
-               <div key={idx} className="flex gap-4">
-                 <span className="font-hand text-4xl text-orange-300 leading-none">"</span>
-                 <p className="text-slate-700 italic font-medium pt-1">{tip}</p>
-               </div>
-             ))}
+        {/* Actionable Tips with Right-Side Image */}
+        <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl shadow-md border border-orange-100 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            
+            {/* Text Content */}
+            <div className="flex-1 space-y-4 relative z-10">
+              <h3 className="text-xl font-bold text-orange-800 mb-2 flex items-center gap-2">
+                <AlertCircle className="text-orange-500" /> Tips del Maestro
+              </h3>
+              {analysis.feedback.tips.map((tip, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <span className="font-hand text-4xl text-orange-300 leading-none">"</span>
+                  <p className="text-slate-700 italic font-medium pt-1">{tip}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Side Image (Sticker Style) */}
+            <div className="shrink-0 w-32 md:w-48 relative transform rotate-3 hover:rotate-0 transition-transform duration-300 flex flex-col items-center">
+              <div className="absolute -top-4 -left-4 bg-white rounded-full px-3 py-1 shadow-md border border-slate-200 z-20 font-hand font-bold text-slate-800 rotate-[-10deg] text-sm whitespace-nowrap">
+                ¡Toma nota!
+              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1513245543132-31f507417b26?q=80&w=400&auto=format&fit=crop"
+                alt="Maestro Michi dando tips"
+                className="w-full h-auto rounded-xl shadow-xl border-4 border-white object-cover aspect-square"
+              />
+            </div>
           </div>
         </div>
 

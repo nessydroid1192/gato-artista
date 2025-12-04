@@ -1,0 +1,5 @@
+{
+  "name": "ArtCatz: Asistente Técnico de Arte",
+  "description": "Una herramienta de análisis técnico de arte con un asistente felino. Proporciona retroalimentación técnica sobre dibujos (composición, color, perspectiva) utilizando la API de Gemini.",
+  "requestFramePermissions": []
+}
